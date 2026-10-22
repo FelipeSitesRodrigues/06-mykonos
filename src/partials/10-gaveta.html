@@ -1,0 +1,74 @@
+<dialog class="gaveta" id="gaveta" aria-labelledby="gaveta-titulo">
+    <div class="gaveta__painel">
+      <div class="gaveta__topo">
+        <button class="gaveta__botao gaveta__voltar" type="button" data-voltar hidden aria-label="Voltar"><i data-i="arrow-left"></i></button>
+        <h2 class="gaveta__titulo" id="gaveta-titulo">Sacola</h2>
+        <button class="gaveta__botao gaveta__fechar" type="button" data-fechar aria-label="Fechar"><i data-i="x"></i></button>
+      </div>
+      <div class="gaveta__corpo" data-lenis-prevent></div>
+      <div class="gaveta__pe" hidden></div>
+    </div>
+  </dialog>
+
+  <!-- ícones que só o JS da gaveta usa (o build põe no sprite) -->
+  <template id="tpl-icones"><i data-i="minus"></i><i data-i="plus"></i></template>
+
+  <template id="tpl-menu">
+    <nav class="menu" aria-label="Menu">
+      <ul class="menu__principal" role="list">
+        <li><a href="#linhas" data-abrir="colecao:sol">Sol</a></li>
+        <li><a href="#selene" data-abrir="colecao:selene">Selene</a></li>
+        <li><a href="#presentes" data-fechar>Presentes</a></li>
+        <li><a href="#marca" data-abrir="marca">A marca</a></li>
+      </ul>
+      <ul class="menu__extra" role="list">
+        <li><button type="button" data-abrir="conta">Entrar</button></li>
+        <li><button type="button" data-abrir="ajuda:trocas">Ajuda</button></li>
+      </ul>
+    </nav>
+  </template>
+
+  <template id="tpl-marca">
+    <div class="texto-gaveta">
+      <p>A MYKONOS desenha óculos pra quem passa o verão entre ilhas. Formas clássicas, que já eram bonitas há cinquenta anos e vão continuar sendo, sem logo grande na haste.</p>
+      <p>São duas linhas. A Sol, de lente polarizada com proteção UV400, pro meio-dia na falésia e pro barco. E a Selene, de lente que filtra a luz azul das telas, pra usar à noite, antes de dormir.</p>
+      <p>Todo pedido vai com o estojo rígido azul, a flanela listrada com o coqueiro e garantia de um ano.</p>
+      <ul class="texto-gaveta__lista" role="list">
+        <li>Frete grátis acima de R$&nbsp;399</li>
+        <li>6x sem juros ou 5% off no Pix</li>
+        <li>Troca em 30 dias</li>
+      </ul>
+    </div>
+  </template>
+
+  <template id="tpl-ajuda">
+    <div class="texto-gaveta">
+      <section id="ajuda-trocas" aria-labelledby="ajuda-trocas-t">
+        <h3 id="ajuda-trocas-t">Trocas</h3>
+        <p>Você tem 30 dias pra trocar ou devolver, contados do dia em que o pedido chega. O óculos volta no estojo, sem marca de uso, e o frete da volta é por nossa conta.</p>
+      </section>
+      <section id="ajuda-frete" aria-labelledby="ajuda-frete-t">
+        <h3 id="ajuda-frete-t">Frete</h3>
+        <p>Grátis acima de R$&nbsp;399. Abaixo disso, o valor aparece na sacola pelo CEP. O pedido sai em até 2 dias úteis.</p>
+      </section>
+      <section id="ajuda-contato" aria-labelledby="ajuda-contato-t">
+        <h3 id="ajuda-contato-t">Contato</h3>
+        <p>A MYKONOS é uma marca fictícia: este é um site conceito e nada é vendido de verdade. Pra falar com quem fez o site, chame o Felipe Rodrigues no Instagram.</p>
+        <p><a class="link" href="{{cfg.credito}}" target="_blank" rel="noopener">@credialta.sites</a></p>
+      </section>
+    </div>
+  </template>
+
+  <template id="tpl-conta">
+    <div class="texto-gaveta">
+      <p>Entre com o seu e-mail. A gente manda um link de acesso, sem senha.</p>
+      <form class="conta__form" novalidate>
+        <div class="campo campo--caixa">
+          <input class="campo__input" id="conta-email" type="email" name="email" autocomplete="email" required placeholder=" " aria-describedby="conta-msg">
+          <label class="campo__rotulo" for="conta-email">Seu e-mail</label>
+        </div>
+        <button class="botao" type="submit">Receber o link</button>
+        <p class="conta__msg" id="conta-msg" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </template>

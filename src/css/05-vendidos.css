@@ -1,0 +1,135 @@
+/* 05 · mais vendidos: 4 cards sem borda nem caixa, só a foto, o nome e o preço.
+   No mouse (como na Saint Tropez): a foto do óculos dá lugar à da pessoa usando e o botão
+   "Adicionar à sacola" sobe por cima da foto. No toque não existe mouse: as duas fotos viram
+   um trilho de arrastar pro lado, com dois traços embaixo dizendo qual está na tela.
+   O card é contêiner (cqw): o botão e os traços se posicionam pela altura da foto. */
+.vendidos { padding: 4.5rem var(--margem) 4.5rem; }
+.vendidos__titulo {
+  margin: 0 -.48em 3.75rem 0;
+  text-align: center;
+}
+.grade {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 3rem 1.75rem;
+}
+
+.card { position: relative; container-type: inline-size; }
+.card__link { display: block; }
+.card__fotos {
+  display: block;
+  position: relative;
+  aspect-ratio: 19 / 20;
+  overflow: hidden;
+  background: var(--cinza-foto);
+}
+.card__trilho { display: block; height: 100%; }
+.card__quadro {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.card__quadro img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card__quadro--pessoa {
+  opacity: 0;
+  transition: opacity .7s var(--ease-suave);
+}
+.card__quadro--pessoa img {
+  object-position: 50% 16%;
+  transform: scale(1.06);
+  transition: transform 1.4s var(--ease);
+}
+.card__nome {
+  display: block;
+  margin-top: 1.3rem;
+  font-size: .8125rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+}
+.card__preco {
+  display: block;
+  margin-top: .45rem;
+  font-size: .8125rem;
+  line-height: 1.2;
+  letter-spacing: .1em;
+}
+.card__add {
+  position: absolute;
+  left: .75rem;
+  right: .75rem;
+  top: calc(100cqw * 20 / 19 - 3.5rem);
+  height: 2.75rem;
+  background: rgb(255 255 255 / .94);
+  color: var(--noite);
+  font-size: .6875rem;
+  font-weight: 500;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(.75rem);
+  transition: opacity .45s var(--ease-suave), transform .6s var(--ease), background-color .3s var(--ease-suave), color .3s var(--ease-suave);
+}
+.card__add:focus-visible { opacity: 1; transform: none; outline-offset: -2px; }
+.card__pontos { display: none; }
+
+@media (hover: hover) and (pointer: fine) {
+  .card:hover .card__quadro--pessoa { opacity: 1; }
+  .card:hover .card__quadro--pessoa img { transform: none; }
+  .card:hover .card__add,
+  .card:focus-within .card__add { opacity: 1; transform: none; }
+  .card__add:hover { background: var(--noite); color: var(--branco); }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .card__trilho {
+    display: flex;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .card__trilho::-webkit-scrollbar { display: none; }
+  .card__quadro {
+    position: relative;
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+  }
+  .card__quadro--pessoa { opacity: 1; }
+  .card__quadro--pessoa img { transform: none; }
+  .card__add { display: none; }
+  .card__pontos {
+    position: absolute;
+    top: calc(100cqw * 20 / 19 - 1rem);
+    left: 50%;
+    display: flex;
+    gap: .375rem;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+  .card__pontos i {
+    width: 1rem;
+    height: 2px;
+    background: rgb(10 35 66 / .22);
+    transition: background-color .3s var(--ease-suave);
+  }
+  .card__pontos i:first-child,
+  .card.na-pessoa .card__pontos i:last-child { background: var(--noite); }
+  .card.na-pessoa .card__pontos i:first-child { background: rgb(10 35 66 / .22); }
+}
+
+@media (max-width: 56.24em) {
+  .grade { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem .75rem; }
+}
+@media (max-width: 47.99em) {
+  .vendidos { padding: 3rem var(--margem) 3rem; }
+  .vendidos__titulo { margin-bottom: 2.25rem; font-size: .75rem; letter-spacing: .42em; margin-right: -.42em; }
+  .card__nome { margin-top: 1rem; font-size: .75rem; letter-spacing: .24em; }
+  .card__preco { font-size: .75rem; }
+}

@@ -1,0 +1,52 @@
+/* Gerado por scripts/fontes.mjs. Não editar à mão. */
+@font-face {
+  font-family: 'Benito';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('/assets/fonts/benito-800.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Benito';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/benito-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/jost-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/assets/fonts/jost-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/assets/fonts/jost-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Benito fallback';
+  src: local('Arial Bold');
+  size-adjust: 72.62%;
+  ascent-override: 110.17%;
+  descent-override: 27.54%;
+  line-gap-override: 20.66%;
+}
+@font-face {
+  font-family: 'Jost fallback';
+  src: local('Arial');
+  size-adjust: 99.36%;
+  ascent-override: 107.69%;
+  descent-override: 37.74%;
+  line-gap-override: 0.00%;
+}

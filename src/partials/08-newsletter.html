@@ -1,0 +1,14 @@
+<section class="news" id="novidades" aria-labelledby="news-titulo">
+      <h2 class="news__titulo revelar" id="news-titulo">Receba as coleções antes de todo mundo.</h2>
+      <div class="news__vaga revelar" style="--i:1" data-news></div>
+      <template id="tpl-news">
+        <form class="news__form" novalidate>
+          <div class="campo">
+            <input class="campo__input" id="news-email" type="email" name="email" autocomplete="email" required placeholder=" " aria-describedby="news-msg">
+            <label class="campo__rotulo" for="news-email">Seu e-mail</label>
+            <button class="campo__botao" type="submit">Assinar</button>
+          </div>
+          <p class="news__msg" id="news-msg" role="status" aria-live="polite"></p>
+        </form>
+      </template>
+    </section>

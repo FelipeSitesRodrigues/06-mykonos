@@ -1,0 +1,94 @@
+/* 08 · newsletter: uma frase na Benito leve e um campo de fio só, com o "Assinar" no fim do
+   fio. O rótulo "Seu e-mail" mora dentro do campo e sobe quando ele recebe o foco (nunca
+   placeholder no lugar de rótulo). O form vem de um <template> (memória do 080). */
+.news {
+  padding: 4.5rem var(--margem) 4rem;
+  text-align: center;
+}
+.news__titulo {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(1.4rem, 2.05vw, 1.85rem);
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: .01em;
+  text-wrap: balance;
+}
+.news__vaga {
+  max-width: 47rem;
+  min-height: 5.75rem;
+  margin: 2.25rem auto 0;
+  text-align: left;
+}
+
+/* campo de fio (newsletter) e de caixa (gaveta) */
+.campo {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  border-bottom: 1px solid rgb(10 35 66 / .38);
+}
+.campo::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: var(--noite);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .7s var(--ease);
+}
+.campo:focus-within::after { transform: scaleX(1); }
+.campo.erro { border-bottom-color: #b42318; }
+.campo__input {
+  flex: 1;
+  min-width: 0;
+  padding: 1.6rem 0 .8rem;
+  border: 0;
+  background: none;
+  font-size: 1rem;
+  letter-spacing: .02em;
+  outline: none;
+}
+.campo__rotulo {
+  position: absolute;
+  left: 0;
+  bottom: .85rem;
+  font-size: .9375rem;
+  letter-spacing: .02em;
+  color: rgb(10 35 66 / .66);
+  transform-origin: left bottom;
+  pointer-events: none;
+  transition: transform .45s var(--ease), color .3s var(--ease-suave);
+}
+.campo__input:focus + .campo__rotulo,
+.campo__input:not(:placeholder-shown) + .campo__rotulo {
+  transform: translateY(-1.45rem) scale(.78);
+  color: var(--noite);
+}
+.campo__botao {
+  padding: 1.6rem 0 .8rem 1.5rem;
+  font-size: .75rem;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  transition: color .3s var(--ease-suave);
+}
+.campo__botao:hover { color: var(--azul); }
+.news__msg,
+.conta__msg {
+  min-height: 1.5rem;
+  margin-top: .85rem;
+  font-size: .875rem;
+  letter-spacing: .01em;
+}
+.news__msg.erro,
+.conta__msg.erro { color: #b42318; }
+.news__form.enviado .campo { opacity: .4; pointer-events: none; transition: opacity .5s var(--ease-suave); }
+
+@media (max-width: 47.99em) {
+  .news { padding: 3.5rem var(--margem) 3rem; }
+  .news__titulo { max-width: 18rem; margin-inline: auto; }
+}

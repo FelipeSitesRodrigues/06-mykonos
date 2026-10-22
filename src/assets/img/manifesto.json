@@ -1,0 +1,647 @@
+{
+ "hero-960.avif": {
+  "w": 960,
+  "h": 540,
+  "kb": 42
+ },
+ "hero-960.webp": {
+  "w": 960,
+  "h": 540,
+  "kb": 58
+ },
+ "hero-1280.avif": {
+  "w": 1280,
+  "h": 720,
+  "kb": 62
+ },
+ "hero-1280.webp": {
+  "w": 1280,
+  "h": 720,
+  "kb": 88
+ },
+ "hero-1672.avif": {
+  "w": 1672,
+  "h": 941,
+  "kb": 93
+ },
+ "hero-1672.webp": {
+  "w": 1672,
+  "h": 941,
+  "kb": 128
+ },
+ "hero-movel-480.avif": {
+  "w": 480,
+  "h": 600,
+  "kb": 26
+ },
+ "hero-movel-480.webp": {
+  "w": 480,
+  "h": 600,
+  "kb": 37
+ },
+ "hero-movel-753.avif": {
+  "w": 753,
+  "h": 941,
+  "kb": 54
+ },
+ "hero-movel-753.webp": {
+  "w": 753,
+  "h": 941,
+  "kb": 73
+ },
+ "compre-960.avif": {
+  "w": 960,
+  "h": 540,
+  "kb": 41
+ },
+ "compre-960.webp": {
+  "w": 960,
+  "h": 540,
+  "kb": 72
+ },
+ "compre-1280.avif": {
+  "w": 1280,
+  "h": 720,
+  "kb": 60
+ },
+ "compre-1280.webp": {
+  "w": 1280,
+  "h": 720,
+  "kb": 108
+ },
+ "compre-1672.avif": {
+  "w": 1672,
+  "h": 941,
+  "kb": 85
+ },
+ "compre-1672.webp": {
+  "w": 1672,
+  "h": 941,
+  "kb": 149
+ },
+ "compre-movel-480.avif": {
+  "w": 480,
+  "h": 480,
+  "kb": 22
+ },
+ "compre-movel-480.webp": {
+  "w": 480,
+  "h": 480,
+  "kb": 37
+ },
+ "compre-movel-941.avif": {
+  "w": 941,
+  "h": 941,
+  "kb": 52
+ },
+ "compre-movel-941.webp": {
+  "w": 941,
+  "h": 941,
+  "kb": 91
+ },
+ "selene-960.avif": {
+  "w": 960,
+  "h": 640,
+  "kb": 28
+ },
+ "selene-960.webp": {
+  "w": 960,
+  "h": 640,
+  "kb": 55
+ },
+ "selene-1280.avif": {
+  "w": 1280,
+  "h": 853,
+  "kb": 40
+ },
+ "selene-1280.webp": {
+  "w": 1280,
+  "h": 853,
+  "kb": 79
+ },
+ "selene-1536.avif": {
+  "w": 1536,
+  "h": 1024,
+  "kb": 51
+ },
+ "selene-1536.webp": {
+  "w": 1536,
+  "h": 1024,
+  "kb": 100
+ },
+ "selene-movel-480.avif": {
+  "w": 480,
+  "h": 600,
+  "kb": 17
+ },
+ "selene-movel-480.webp": {
+  "w": 480,
+  "h": 600,
+  "kb": 34
+ },
+ "selene-movel-819.avif": {
+  "w": 819,
+  "h": 1024,
+  "kb": 35
+ },
+ "selene-movel-819.webp": {
+  "w": 819,
+  "h": 1024,
+  "kb": 68
+ },
+ "linha-sol-720.avif": {
+  "w": 720,
+  "h": 480,
+  "kb": 36
+ },
+ "linha-sol-720.webp": {
+  "w": 720,
+  "h": 480,
+  "kb": 64
+ },
+ "linha-sol-1080.avif": {
+  "w": 1080,
+  "h": 720,
+  "kb": 62
+ },
+ "linha-sol-1080.webp": {
+  "w": 1080,
+  "h": 720,
+  "kb": 113
+ },
+ "linha-sol-1536.avif": {
+  "w": 1536,
+  "h": 1024,
+  "kb": 97
+ },
+ "linha-sol-1536.webp": {
+  "w": 1536,
+  "h": 1024,
+  "kb": 178
+ },
+ "linha-sol-movel-400.avif": {
+  "w": 400,
+  "h": 500,
+  "kb": 20
+ },
+ "linha-sol-movel-400.webp": {
+  "w": 400,
+  "h": 500,
+  "kb": 34
+ },
+ "linha-sol-movel-640.avif": {
+  "w": 640,
+  "h": 800,
+  "kb": 37
+ },
+ "linha-sol-movel-640.webp": {
+  "w": 640,
+  "h": 800,
+  "kb": 66
+ },
+ "linha-selene-720.avif": {
+  "w": 720,
+  "h": 480,
+  "kb": 22
+ },
+ "linha-selene-720.webp": {
+  "w": 720,
+  "h": 480,
+  "kb": 36
+ },
+ "linha-selene-1080.avif": {
+  "w": 1080,
+  "h": 720,
+  "kb": 38
+ },
+ "linha-selene-1080.webp": {
+  "w": 1080,
+  "h": 720,
+  "kb": 64
+ },
+ "linha-selene-1536.avif": {
+  "w": 1536,
+  "h": 1024,
+  "kb": 60
+ },
+ "linha-selene-1536.webp": {
+  "w": 1536,
+  "h": 1024,
+  "kb": 102
+ },
+ "linha-selene-movel-400.avif": {
+  "w": 400,
+  "h": 500,
+  "kb": 13
+ },
+ "linha-selene-movel-400.webp": {
+  "w": 400,
+  "h": 500,
+  "kb": 22
+ },
+ "linha-selene-movel-640.avif": {
+  "w": 640,
+  "h": 800,
+  "kb": 25
+ },
+ "linha-selene-movel-640.webp": {
+  "w": 640,
+  "h": 800,
+  "kb": 42
+ },
+ "marca-640.avif": {
+  "w": 640,
+  "h": 800,
+  "kb": 37
+ },
+ "marca-640.webp": {
+  "w": 640,
+  "h": 800,
+  "kb": 55
+ },
+ "marca-900.avif": {
+  "w": 900,
+  "h": 1125,
+  "kb": 65
+ },
+ "marca-900.webp": {
+  "w": 900,
+  "h": 1125,
+  "kb": 94
+ },
+ "marca-1122.avif": {
+  "w": 1122,
+  "h": 1402,
+  "kb": 92
+ },
+ "marca-1122.webp": {
+  "w": 1122,
+  "h": 1402,
+  "kb": 130
+ },
+ "astra-pessoa-400.avif": {
+  "w": 400,
+  "h": 500,
+  "kb": 18
+ },
+ "astra-pessoa-400.webp": {
+  "w": 400,
+  "h": 500,
+  "kb": 26
+ },
+ "astra-pessoa-500.avif": {
+  "w": 500,
+  "h": 625,
+  "kb": 27
+ },
+ "astra-pessoa-500.webp": {
+  "w": 500,
+  "h": 625,
+  "kb": 36
+ },
+ "astra-produto-400.avif": {
+  "w": 400,
+  "h": 500,
+  "kb": 5
+ },
+ "astra-produto-400.webp": {
+  "w": 400,
+  "h": 500,
+  "kb": 7
+ },
+ "astra-produto-500.avif": {
+  "w": 500,
+  "h": 625,
+  "kb": 7
+ },
+ "astra-produto-500.webp": {
+  "w": 500,
+  "h": 625,
+  "kb": 9
+ },
+ "elia-pessoa-400.avif": {
+  "w": 400,
+  "h": 500,
+  "kb": 14
+ },
+ "elia-pessoa-400.webp": {
+  "w": 400,
+  "h": 500,
+  "kb": 18
+ },
+ "elia-pessoa-500.avif": {
+  "w": 500,
+  "h": 625,
+  "kb": 19
+ },
+ "elia-pessoa-500.webp": {
+  "w": 500,
+  "h": 625,
+  "kb": 25
+ },
+ "elia-produto-400.avif": {
+  "w": 400,
+  "h": 500,
+  "kb": 5
+ },
+ "elia-produto-400.webp": {
+  "w": 400,
+  "h": 500,
+  "kb": 6
+ },
+ "elia-produto-500.avif": {
+  "w": 500,
+  "h": 625,
+  "kb": 6
+ },
+ "elia-produto-500.webp": {
+  "w": 500,
+  "h": 625,
+  "kb": 9
+ },
+ "eos-pessoa-400.avif": {
+  "w": 400,
+  "h": 500,
+  "kb": 12
+ },
+ "eos-pessoa-400.webp": {
+  "w": 400,
+  "h": 500,
+  "kb": 13
+ },
+ "eos-pessoa-500.avif": {
+  "w": 500,
+  "h": 625,
+  "kb": 16
+ },
+ "eos-pessoa-500.webp": {
+  "w": 500,
+  "h": 625,
+  "kb": 19
+ },
+ "eos-produto-400.avif": {
+  "w": 400,
+  "h": 500,
+  "kb": 5
+ },
+ "eos-produto-400.webp": {
+  "w": 400,
+  "h": 500,
+  "kb": 6
+ },
+ "eos-produto-500.avif": {
+  "w": 500,
+  "h": 625,
+  "kb": 6
+ },
+ "eos-produto-500.webp": {
+  "w": 500,
+  "h": 625,
+  "kb": 8
+ },
+ "hydra-pessoa-400.avif": {
+  "w": 400,
+  "h": 500,
+  "kb": 15
+ },
+ "hydra-pessoa-400.webp": {
+  "w": 400,
+  "h": 500,
+  "kb": 19
+ },
+ "hydra-pessoa-500.avif": {
+  "w": 500,
+  "h": 625,
+  "kb": 21
+ },
+ "hydra-pessoa-500.webp": {
+  "w": 500,
+  "h": 625,
+  "kb": 26
+ },
+ "hydra-produto-400.avif": {
+  "w": 400,
+  "h": 500,
+  "kb": 5
+ },
+ "hydra-produto-400.webp": {
+  "w": 400,
+  "h": 500,
+  "kb": 6
+ },
+ "hydra-produto-500.avif": {
+  "w": 500,
+  "h": 625,
+  "kb": 6
+ },
+ "hydra-produto-500.webp": {
+  "w": 500,
+  "h": 625,
+  "kb": 8
+ },
+ "milos-pessoa-400.avif": {
+  "w": 400,
+  "h": 500,
+  "kb": 12
+ },
+ "milos-pessoa-400.webp": {
+  "w": 400,
+  "h": 500,
+  "kb": 16
+ },
+ "milos-pessoa-500.avif": {
+  "w": 500,
+  "h": 625,
+  "kb": 17
+ },
+ "milos-pessoa-500.webp": {
+  "w": 500,
+  "h": 625,
+  "kb": 23
+ },
+ "milos-produto-400.avif": {
+  "w": 400,
+  "h": 500,
+  "kb": 3
+ },
+ "milos-produto-400.webp": {
+  "w": 400,
+  "h": 500,
+  "kb": 4
+ },
+ "milos-produto-500.avif": {
+  "w": 500,
+  "h": 625,
+  "kb": 4
+ },
+ "milos-produto-500.webp": {
+  "w": 500,
+  "h": 625,
+  "kb": 5
+ },
+ "naxos-pessoa-400.avif": {
+  "w": 400,
+  "h": 500,
+  "kb": 13
+ },
+ "naxos-pessoa-400.webp": {
+  "w": 400,
+  "h": 500,
+  "kb": 16
+ },
+ "naxos-pessoa-500.avif": {
+  "w": 500,
+  "h": 625,
+  "kb": 19
+ },
+ "naxos-pessoa-500.webp": {
+  "w": 500,
+  "h": 625,
+  "kb": 23
+ },
+ "naxos-produto-400.avif": {
+  "w": 400,
+  "h": 500,
+  "kb": 5
+ },
+ "naxos-produto-400.webp": {
+  "w": 400,
+  "h": 500,
+  "kb": 7
+ },
+ "naxos-produto-500.avif": {
+  "w": 500,
+  "h": 625,
+  "kb": 7
+ },
+ "naxos-produto-500.webp": {
+  "w": 500,
+  "h": 625,
+  "kb": 10
+ },
+ "nyx-pessoa-400.avif": {
+  "w": 400,
+  "h": 500,
+  "kb": 14
+ },
+ "nyx-pessoa-400.webp": {
+  "w": 400,
+  "h": 500,
+  "kb": 19
+ },
+ "nyx-pessoa-500.avif": {
+  "w": 500,
+  "h": 625,
+  "kb": 20
+ },
+ "nyx-pessoa-500.webp": {
+  "w": 500,
+  "h": 625,
+  "kb": 26
+ },
+ "nyx-produto-400.avif": {
+  "w": 400,
+  "h": 500,
+  "kb": 6
+ },
+ "nyx-produto-400.webp": {
+  "w": 400,
+  "h": 500,
+  "kb": 8
+ },
+ "nyx-produto-500.avif": {
+  "w": 500,
+  "h": 625,
+  "kb": 7
+ },
+ "nyx-produto-500.webp": {
+  "w": 500,
+  "h": 625,
+  "kb": 10
+ },
+ "paros-pessoa-400.avif": {
+  "w": 400,
+  "h": 500,
+  "kb": 13
+ },
+ "paros-pessoa-400.webp": {
+  "w": 400,
+  "h": 500,
+  "kb": 15
+ },
+ "paros-pessoa-500.avif": {
+  "w": 500,
+  "h": 625,
+  "kb": 19
+ },
+ "paros-pessoa-500.webp": {
+  "w": 500,
+  "h": 625,
+  "kb": 21
+ },
+ "paros-produto-400.avif": {
+  "w": 400,
+  "h": 500,
+  "kb": 5
+ },
+ "paros-produto-400.webp": {
+  "w": 400,
+  "h": 500,
+  "kb": 6
+ },
+ "paros-produto-500.avif": {
+  "w": 500,
+  "h": 625,
+  "kb": 6
+ },
+ "paros-produto-500.webp": {
+  "w": 500,
+  "h": 625,
+  "kb": 8
+ },
+ "psarou-pessoa-400.avif": {
+  "w": 400,
+  "h": 500,
+  "kb": 10
+ },
+ "psarou-pessoa-400.webp": {
+  "w": 400,
+  "h": 500,
+  "kb": 13
+ },
+ "psarou-pessoa-500.avif": {
+  "w": 500,
+  "h": 625,
+  "kb": 15
+ },
+ "psarou-pessoa-500.webp": {
+  "w": 500,
+  "h": 625,
+  "kb": 19
+ },
+ "psarou-produto-400.avif": {
+  "w": 400,
+  "h": 500,
+  "kb": 4
+ },
+ "psarou-produto-400.webp": {
+  "w": 400,
+  "h": 500,
+  "kb": 4
+ },
+ "psarou-produto-500.avif": {
+  "w": 500,
+  "h": 625,
+  "kb": 4
+ },
+ "psarou-produto-500.webp": {
+  "w": 500,
+  "h": 625,
+  "kb": 6
+ },
+ "og-mykonos.jpg": {
+  "w": 1200,
+  "h": 630,
+  "kb": 115
+ }
+}

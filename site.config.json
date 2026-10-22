@@ -1,0 +1,19 @@
+{
+  "dominio": "",
+  "indexar": false,
+  "nome": "MYKONOS",
+  "credito": "https://www.instagram.com/credialta.sites/",
+  "links": {
+    "instagram": "https://www.instagram.com/credialta.sites/",
+    "tiktok": "https://www.tiktok.com/"
+  },
+  "linhas": {
+    "sol": { "nome": "Sol", "titulo": "Linha Sol", "texto": "Óculos de sol polarizados, com proteção UV400. R$ 449 cada." },
+    "selene": { "nome": "Selene", "titulo": "Linha Selene", "texto": "Lente que filtra a luz azul das telas, pra usar à noite. R$ 349 cada." }
+  },
+  "pendencias": [
+    "marca fictícia, site conceito pro portfólio: indexar false deixa a página fora do Google (noindex e robots Disallow). Só trocar se o Felipe pedir",
+    "dominio vazio: preencher quando subir na Vercel (canonical e og:image absoluto)",
+    "TikTok aponta pro tiktok.com: o Felipe não tem perfil cadastrado na memória. O Instagram leva pro @credialta.sites"
+  ]
+}

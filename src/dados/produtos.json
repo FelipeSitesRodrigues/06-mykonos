@@ -1,0 +1,105 @@
+[
+  {
+    "id": "hydra",
+    "nome": "Hydra",
+    "linha": "sol",
+    "preco": 449,
+    "maisVendido": 1,
+    "resumo": "Quadrado de cantos suaves, cristal",
+    "descricao": "Quadrado de cantos suaves em acetato cristal transparente. Lente azul Grécia polarizada, com proteção UV400.",
+    "busca": "quadrado cristal transparente azul acetato polarizado",
+    "altProduto": "Óculos Hydra de frente: armação quadrada em acetato cristal com lente azul",
+    "altPessoa": "Homem de cabelo ondulado e camisa de linho branca usando o Hydra"
+  },
+  {
+    "id": "psarou",
+    "nome": "Psarou",
+    "linha": "sol",
+    "preco": 449,
+    "maisVendido": 2,
+    "resumo": "Oval fino anos 90, preto",
+    "descricao": "Oval fino dos anos 90 em acetato preto brilhante. Lente cinza quase preta, polarizada, com proteção UV400.",
+    "busca": "oval fino preto anos 90 acetato cinza polarizado",
+    "altProduto": "Óculos Psarou de frente: armação oval fina em acetato preto com lente escura",
+    "altPessoa": "Mulher de cabelo preso e regata branca usando o Psarou"
+  },
+  {
+    "id": "paros",
+    "nome": "Paros",
+    "linha": "sol",
+    "preco": 449,
+    "maisVendido": 3,
+    "resumo": "Panto tartaruga, lente verde",
+    "descricao": "Panto em acetato tartaruga havana, com ponte buraco de fechadura e dois rebites dourados. Lente verde-garrafa polarizada, com proteção UV400.",
+    "busca": "panto tartaruga havana verde acetato rebite dourado polarizado",
+    "altProduto": "Óculos Paros de frente: armação panto tartaruga com lente verde",
+    "altPessoa": "Homem de barba e camisa de linho branca usando o Paros"
+  },
+  {
+    "id": "milos",
+    "nome": "Milos",
+    "linha": "sol",
+    "preco": 449,
+    "resumo": "Gatinho suave, branco leitoso",
+    "descricao": "Gatinho suave em acetato branco leitoso. Lente marrom degradê polarizada, com proteção UV400.",
+    "busca": "gatinho branco leitoso marrom degradê acetato",
+    "altProduto": "Óculos Milos de frente: armação gatinho em acetato branco com lente marrom degradê",
+    "altPessoa": "Mulher loira de cabelo curto e regata branca usando o Milos"
+  },
+  {
+    "id": "naxos",
+    "nome": "Naxos",
+    "linha": "sol",
+    "preco": 449,
+    "maisVendido": 4,
+    "resumo": "Aviador dourado, azul degradê",
+    "descricao": "Aviador de metal dourado fino, com ponte dupla. Lente azul degradê polarizada, com proteção UV400.",
+    "busca": "aviador metal dourado ponte dupla azul degradê",
+    "altProduto": "Óculos Naxos de frente: aviador de metal dourado com lente azul degradê",
+    "altPessoa": "Homem de cabelo escuro e camisa de linho branca usando o Naxos"
+  },
+  {
+    "id": "elia",
+    "nome": "Elia",
+    "linha": "sol",
+    "preco": 449,
+    "resumo": "Redondo pequeno, dourado",
+    "descricao": "Redondo pequeno de metal dourado fino. Lente verde escura polarizada, com proteção UV400.",
+    "busca": "redondo pequeno metal dourado verde polarizado",
+    "altProduto": "Óculos Elia de frente: armação redonda pequena de metal dourado com lente verde",
+    "altPessoa": "Mulher de cabelo cacheado e camisa de linho branca usando o Elia"
+  },
+  {
+    "id": "nyx",
+    "nome": "Nyx",
+    "linha": "selene",
+    "preco": 349,
+    "resumo": "Quadrado tartaruga, lente âmbar",
+    "descricao": "Quadrado arredondado em acetato tartaruga escuro. Lente âmbar que filtra a luz azul das telas, pra usar nas horas antes de dormir.",
+    "busca": "quadrado tartaruga âmbar laranja noite luz azul telas dormir",
+    "altProduto": "Óculos Nyx de frente: armação quadrada tartaruga com lente âmbar",
+    "altPessoa": "Homem grisalho de barba e camisa de linho branca usando o Nyx"
+  },
+  {
+    "id": "astra",
+    "nome": "Astra",
+    "linha": "selene",
+    "preco": 349,
+    "resumo": "Panto champanhe, lente mel",
+    "descricao": "Panto em acetato cristal champanhe. Lente amarelo-mel clara, pensada pras telas à noite.",
+    "busca": "panto cristal champanhe amarelo mel noite luz azul telas",
+    "altProduto": "Óculos Astra de frente: armação panto em acetato champanhe com lente amarelo-mel",
+    "altPessoa": "Mulher ruiva de cabelo comprido usando o Astra"
+  },
+  {
+    "id": "eos",
+    "nome": "Eos",
+    "linha": "selene",
+    "preco": 349,
+    "resumo": "Redondo dourado, lente clara",
+    "descricao": "Redondo de metal dourado fino. Lente transparente que filtra a luz azul das telas durante o dia.",
+    "busca": "redondo metal dourado transparente claro dia luz azul telas",
+    "altProduto": "Óculos Eos de frente: armação redonda de metal dourado com lente transparente",
+    "altPessoa": "Homem de cabelo preto liso e camisa de linho branca usando o Eos"
+  }
+]

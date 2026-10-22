@@ -1,0 +1,48 @@
+/* 07 · a marca: foto larga à esquerda (57%), texto curto à direita com muito ar.
+   A foto é em pé (4:5): no computador ela entra cortada em paisagem, pelo rosto; no celular
+   aparece inteira. */
+.marca {
+  display: grid;
+  grid-template-columns: 57fr 43fr;
+  align-items: center;
+  margin-top: var(--vao);
+}
+.marca__foto {
+  aspect-ratio: 3 / 2;
+  background: var(--cinza-foto);
+}
+.marca__foto picture { width: 100%; height: 100%; }
+.marca__foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 14%;
+}
+.marca__texto {
+  max-width: 38rem;
+  padding: 3rem var(--margem) 3rem clamp(2.5rem, 6vw, 7rem);
+}
+.marca__titulo {
+  margin-top: 1.9rem;
+  font-size: clamp(2.5rem, 4.75vw, 4.6rem);
+  line-height: 1;
+}
+.marca__corpo {
+  max-width: 29rem;
+  margin-top: 2.4rem;
+  font-size: .9375rem;
+  line-height: 2;
+  letter-spacing: .015em;
+}
+.marca__acao { margin-top: 1.9rem; }
+
+@media (max-width: 47.99em) {
+  .marca { grid-template-columns: 100%; margin-top: 0; }
+  .marca__foto { aspect-ratio: 1; }
+  .marca__foto img { object-position: 50% 50%; }
+  .marca__texto { padding: 2.75rem var(--margem) 1rem; }
+  .marca__texto .rotulo { font-size: .6875rem; letter-spacing: .42em; }
+  .marca__titulo { margin-top: 1.25rem; font-size: clamp(2.4rem, 11.5vw, 3.5rem); }
+  .marca__corpo { margin-top: 1.5rem; line-height: 1.85; }
+  .marca__acao { margin-top: 1.25rem; }
+}

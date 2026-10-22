@@ -1,0 +1,133 @@
+/* 00 · faixa de aviso e 01 · header
+   O header gruda no topo com uma parte dele (topo-sobra) já fora da tela: sobra uma barra
+   baixa, e o miolo desce até o meio dela com o logo menor. Só transform; quem liga o estado
+   é um IntersectionObserver (02-topo.js), sem ouvir a rolagem. */
+.aviso {
+  display: grid;
+  place-items: center;
+  height: var(--aviso-h);
+  padding-inline: var(--margem);
+  background: var(--noite);
+  color: var(--branco);
+}
+.aviso p {
+  margin-right: -.3em;
+  font-size: .6875rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: .3em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.topo__sentinela {
+  position: absolute;
+  top: calc(var(--aviso-h) + var(--topo-sobra));
+  left: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+.topo {
+  position: sticky;
+  top: calc(var(--topo-sobra) * -1);
+  z-index: 20;
+  height: var(--topo-h);
+  background: var(--branco);
+}
+.topo::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 1px;
+  background: var(--linha);
+  opacity: 0;
+  transition: opacity .5s var(--ease-suave);
+}
+.topo.compacto::after { opacity: 1; }
+.topo__barra {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  column-gap: 2rem;
+  height: 100%;
+  padding-inline: var(--margem);
+  transition: transform .7s var(--ease);
+}
+.topo.compacto .topo__barra { transform: translateY(calc(var(--topo-sobra) / 2)); }
+
+.topo__esq { display: flex; align-items: center; }
+.topo__nav { display: flex; gap: 3rem; }
+.topo__nav a {
+  position: relative;
+  padding-block: .6rem;
+  font-size: .75rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+}
+.topo__nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: .3em;
+  bottom: .1rem;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .5s var(--ease);
+}
+.topo__nav a:hover::after { transform: scaleX(1); transform-origin: left; }
+
+.topo__logo { justify-self: center; color: var(--azul); }
+.topo__logo .logo {
+  width: 15.5rem;
+  transition: transform .7s var(--ease);
+}
+.topo.compacto .topo__logo .logo { transform: scale(.66); }
+
+.topo__dir { display: flex; justify-content: flex-end; align-items: center; gap: 1.75rem; }
+.topo__icone {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin: -.6875rem;
+  transition: color .3s var(--ease-suave);
+}
+.topo__icone:hover { color: var(--azul); }
+.topo__icone .i { width: 1.4rem; height: 1.4rem; }
+.topo__menu { display: none; }
+.topo__qtd {
+  position: absolute;
+  top: .3rem;
+  right: .15rem;
+  min-width: 1.05rem;
+  height: 1.05rem;
+  padding-inline: .28rem;
+  border-radius: 1rem;
+  background: var(--azul);
+  color: var(--branco);
+  font-size: .625rem;
+  font-weight: 500;
+  line-height: 1.05rem;
+  text-align: center;
+}
+.topo__qtd.pulo { animation: pulo .6s cubic-bezier(.34, 1.56, .64, 1); }
+@keyframes pulo {
+  from { transform: scale(.4); }
+  to { transform: none; }
+}
+
+@media (max-width: 47.99em) {
+  .aviso p { font-size: .625rem; letter-spacing: .24em; margin-right: -.24em; }
+  .topo__barra { column-gap: 1rem; }
+  .topo__nav, .topo__conta { display: none; }
+  .topo__menu { display: grid; }
+  .topo__logo .logo { width: 8.75rem; }
+  .topo.compacto .topo__logo .logo { transform: none; }
+  .topo__dir { gap: 1.25rem; }
+}

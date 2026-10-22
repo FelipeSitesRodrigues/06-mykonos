@@ -1,0 +1,213 @@
+/* Base da MYKONOS: cores da bandeira da Grécia, Benito nos títulos e Jost no resto.
+   Medidas tiradas do mockup v2 (714 px de largura = 1440 px de tela). Tudo em rem: acima de
+   1920 a raiz cresce com a tela (memória do 080, zoom-out do cliente). */
+:root {
+  --branco: #ffffff;
+  --noite: #0a2342;
+  --noite-suave: rgb(10 35 66 / .7);
+  --azul: #0d5eaf;
+  --azul-escuro: #0a4c8f;
+  --areia: #efe7d8;
+  --ambar: #f2a541;
+  --cinza-foto: #e3e2e1;
+  --linha: rgb(10 35 66 / .12);
+
+  --fonte-titulo: 'Benito', 'Benito fallback', 'Arial Narrow', Arial, sans-serif;
+  --fonte-texto: 'Jost', 'Jost fallback', Arial, Helvetica, sans-serif;
+
+  --margem: clamp(1.25rem, 3.33vw, 3rem);
+  --texto-x: clamp(1.25rem, 5.55vw, 6.5rem);
+  --vao: .625rem;
+  --aviso-h: 2.25rem;
+  --topo-h: 7.5rem;
+  --topo-sobra: 3.25rem;
+
+  --ease: cubic-bezier(.16, 1, .3, 1);
+  --ease-suave: cubic-bezier(.33, 0, .2, 1);
+}
+@media (max-width: 47.99em) {
+  :root {
+    --aviso-h: 2rem;
+    --topo-h: 3.75rem;
+    --topo-sobra: 0rem;
+  }
+}
+@media (min-width: 120.0625em) {
+  html { font-size: .83333vw; }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--topo-h) - var(--topo-sobra));
+}
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+html.travado { overflow: hidden; }
+body {
+  margin: 0;
+  background: var(--branco);
+  color: var(--noite);
+  font-family: var(--fonte-texto);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+img, picture, svg, video { display: block; max-width: 100%; }
+img { height: auto; }
+h1, h2, h3, p, ul, dl, dd, figure { margin: 0; }
+ul[role="list"] { list-style: none; padding: 0; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; border-radius: 0; }
+input { font: inherit; color: inherit; border-radius: 0; }
+:focus-visible { outline: 2px solid var(--azul); outline-offset: 3px; }
+[hidden] { display: none !important; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.pular {
+  position: absolute;
+  top: .5rem;
+  left: .5rem;
+  z-index: 100;
+  padding: .75rem 1.25rem;
+  background: var(--noite);
+  color: var(--branco);
+  font-size: .875rem;
+  transform: translateY(-160%);
+  transition: transform .3s var(--ease);
+}
+.pular:focus { transform: none; }
+
+/* ícones do sprite (Phosphor light e o logo) */
+.i { width: 1.375rem; height: 1.375rem; fill: currentColor; flex: none; }
+.logo { width: 100%; height: auto; aspect-ratio: 4262 / 755; fill: currentColor; }
+
+/* ---------------------------------------------------------------- tipografia */
+.titulo {
+  font-family: var(--fonte-titulo);
+  font-weight: 800;
+  line-height: .96;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+}
+.titulo .linha { display: block; }
+.rotulo {
+  font-size: .8125rem;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: .48em;
+  text-transform: uppercase;
+}
+
+/* link sublinhado do mockup: no mouse, o fio sai pela direita e volta pela esquerda */
+.link {
+  position: relative;
+  display: inline-block;
+  padding-block: .5rem .8rem;
+  font-size: .75rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: inherit;
+}
+.link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: .3em;
+  bottom: 0;
+  height: 1px;
+  background: currentColor;
+  transform-origin: left;
+}
+.link--fino { font-size: .6875rem; letter-spacing: .28em; }
+@media (hover: hover) and (pointer: fine) {
+  .link:hover::after { animation: fio-varre .9s var(--ease); }
+}
+@keyframes fio-varre {
+  0% { transform: scaleX(1); transform-origin: right; }
+  42% { transform: scaleX(0); transform-origin: right; }
+  43% { transform: scaleX(0); transform-origin: left; }
+  100% { transform: scaleX(1); transform-origin: left; }
+}
+
+/* botão principal (azul Grécia, o único lugar do azul além do logo) */
+.botao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .75rem;
+  width: 100%;
+  min-height: 3.25rem;
+  padding: 0 1.5rem;
+  background: var(--azul);
+  color: var(--branco);
+  font-size: .75rem;
+  font-weight: 500;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  transition: background-color .3s var(--ease-suave), transform .2s var(--ease-suave);
+}
+.botao:hover { background: var(--azul-escuro); }
+.botao:active { transform: scale(.985); }
+
+/* ---------------------------------------------------------------- entrada ao rolar
+   Só com JS (classe .js no <html>): sem ele tudo aparece parado e no lugar. Só transform e
+   opacity (memória do 079). */
+.js .revelar {
+  opacity: 0;
+  transform: translateY(1.75rem);
+  transition: opacity 1s var(--ease-suave), transform 1.2s var(--ease);
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+.js .revelar.visivel { opacity: 1; transform: none; }
+
+/* foto que abre de baixo pra cima: a cortina branca encolhe e a foto assenta */
+.revelar-foto { position: relative; overflow: hidden; }
+.js .revelar-foto img {
+  transform: scale(1.14);
+  transition: transform 2s var(--ease);
+  transition-delay: calc(var(--i, 0) * 120ms);
+}
+.js .revelar-foto::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--branco);
+  transform-origin: top;
+  transition: transform 1.3s var(--ease);
+  transition-delay: calc(var(--i, 0) * 120ms);
+  pointer-events: none;
+}
+.js .revelar-foto.visivel img { transform: none; }
+.js .revelar-foto.visivel::after { transform: scaleY(0); }
+
+/* título em linhas que sobem de dentro de uma máscara; a folga em cima e embaixo guarda o
+   til e o acento (VERÃO, CLÁSSICO) e a vírgula */
+.js .titulo .linha {
+  overflow: hidden;
+  padding-block: .16em .1em;
+  margin-block: -.16em -.1em;
+}
+.js .titulo .linha > span { display: inline-block; }
+.js .titulo:not(.hero__titulo) .linha > span {
+  transform: translateY(130%);
+  transition: transform 1.25s var(--ease);
+  transition-delay: calc(var(--l, 0) * 120ms + 80ms);
+}
+.js .visivel .titulo .linha > span,
+.js .titulo.visivel .linha > span { transform: none; }

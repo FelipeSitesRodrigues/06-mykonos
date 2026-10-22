@@ -1,0 +1,22 @@
+/* Movimento reduzido: tudo nasce no lugar, sem entrada, sem zoom e sem rolagem suave. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    transition-delay: 0s !important;
+  }
+  .js .revelar,
+  .js .banner__texto > * { opacity: 1; transform: none; }
+  .js .revelar-foto img,
+  .js .banner__midia img,
+  .js .titulo .linha > span { transform: none; }
+  .js .revelar-foto::after { transform: scaleY(0); }
+}
+
+/* Lenis (rolagem suave no computador, 01-rolagem.js) */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }

@@ -1,0 +1,301 @@
+/* Gaveta: painel lateral (sacola, busca, coleção, produto, conta, marca e ajuda; no celular,
+   também o menu, que sai da esquerda). O <dialog> cobre a tela: um fundo azul-noite e o painel
+   branco por cima. Entra em .7 s e sai em .42 s, só com transform e opacity. */
+.gaveta {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  background: transparent;
+  color: var(--noite);
+}
+.gaveta::backdrop { background: transparent; }
+.gaveta__fundo {
+  position: absolute;
+  inset: 0;
+  background: rgb(10 35 66 / .42);
+  opacity: 0;
+  transition: opacity .42s var(--ease-suave);
+}
+.gaveta.aberta .gaveta__fundo { opacity: 1; transition-duration: .6s; }
+.gaveta__painel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  width: min(32rem, 100%);
+  background: var(--branco);
+  transform: translateX(100%);
+  transition: transform .42s cubic-bezier(.6, 0, .9, .35);
+}
+.gaveta.aberta .gaveta__painel { transform: none; transition: transform .7s var(--ease); }
+.gaveta--esquerda .gaveta__painel { right: auto; left: 0; transform: translateX(-100%); }
+.gaveta--esquerda.aberta .gaveta__painel { transform: none; }
+
+.gaveta__topo {
+  display: grid;
+  grid-template-columns: 2.75rem 1fr 2.75rem;
+  align-items: center;
+  min-height: 4.5rem;
+  padding-inline: 1.25rem;
+  border-bottom: 1px solid var(--linha);
+}
+.gaveta__titulo {
+  grid-area: 1 / 2;
+  margin-right: -.32em;
+  font-size: .75rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: .32em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.gaveta__botao {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  transition: color .3s var(--ease-suave);
+}
+.gaveta__botao:hover { color: var(--azul); }
+.gaveta__voltar { grid-area: 1 / 1; }
+.gaveta__fechar { grid-area: 1 / 3; }
+.gaveta__corpo {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 2rem 2rem 2.5rem;
+}
+.gaveta__pe {
+  padding: 1.5rem 2rem 1.75rem;
+  border-top: 1px solid var(--linha);
+}
+.gaveta .entra {
+  animation: entra .8s var(--ease) both;
+  animation-delay: calc(var(--i, 0) * 70ms + 140ms);
+}
+@keyframes entra {
+  from { opacity: 0; transform: translateY(1rem); }
+  to { opacity: 1; transform: none; }
+}
+.gaveta__intro {
+  max-width: 24rem;
+  font-size: .9375rem;
+  line-height: 1.7;
+  color: var(--noite-suave);
+}
+.vazio {
+  grid-column: 1 / -1;
+  padding-block: 1rem;
+  font-size: .9375rem;
+  line-height: 1.7;
+  color: var(--noite-suave);
+}
+.vazio .link { margin-top: 1rem; color: var(--noite); }
+
+/* cards da coleção e da busca */
+.grade--gaveta {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.25rem 1rem;
+  margin-top: 1.75rem;
+}
+.card--gaveta .card__nome { margin-top: 1rem; font-size: .75rem; letter-spacing: .24em; }
+.card--gaveta .card__preco { font-size: .75rem; }
+.card--gaveta .card__add {
+  left: .5rem;
+  right: .5rem;
+  top: calc(100cqw * 20 / 19 - 3rem);
+  height: 2.5rem;
+  font-size: .625rem;
+  letter-spacing: .2em;
+}
+
+/* busca */
+.busca__conta {
+  min-height: 1.2em;
+  margin-top: 1rem;
+  font-size: .6875rem;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--noite-suave);
+}
+.busca + .grade--gaveta { margin-top: 1.25rem; }
+.campo__input[type="search"]::-webkit-search-cancel-button { display: none; }
+
+/* produto */
+.produto__fotos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .375rem;
+  margin: -2rem -2rem 0;
+}
+.produto__foto { aspect-ratio: 4 / 5; overflow: hidden; background: var(--cinza-foto); }
+.produto__foto img { width: 100%; height: 100%; object-fit: cover; }
+.produto__nome {
+  margin-top: 2rem;
+  font-family: var(--fonte-titulo);
+  font-size: 2.75rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+}
+.produto__resumo {
+  margin-top: .6rem;
+  font-size: .75rem;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--noite-suave);
+}
+.produto__preco { margin-top: 1.5rem; font-size: 1.25rem; letter-spacing: .04em; }
+.produto__condicoes { margin-top: .3rem; font-size: .8125rem; color: var(--noite-suave); }
+.produto__desc { margin-top: 1.5rem; font-size: .9375rem; line-height: 1.8; }
+.produto__detalhes {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--linha);
+  font-size: .8125rem;
+  line-height: 2.1;
+  color: var(--noite-suave);
+}
+
+/* sacola */
+.sacola__item {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr) auto;
+  gap: 1.25rem;
+  padding-block: 1.25rem;
+  border-bottom: 1px solid var(--linha);
+}
+.sacola__item:first-child { padding-top: 0; }
+.sacola__foto { aspect-ratio: 4 / 5; overflow: hidden; background: var(--cinza-foto); }
+.sacola__foto img { width: 100%; height: 100%; object-fit: cover; }
+.sacola__nome {
+  font-size: .8125rem;
+  font-weight: 500;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+}
+.sacola__linha { margin-top: .2rem; font-size: .75rem; color: var(--noite-suave); }
+.sacola__qtd {
+  display: inline-flex;
+  align-items: center;
+  margin-top: .9rem;
+  border: 1px solid var(--linha);
+}
+.sacola__qtd button {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  transition: color .3s var(--ease-suave);
+}
+.sacola__qtd button:hover { color: var(--azul); }
+.sacola__qtd .i { width: .875rem; height: .875rem; }
+.sacola__qtd > span { min-width: 1.5rem; font-size: .8125rem; text-align: center; }
+.sacola__dir {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.sacola__preco { font-size: .875rem; letter-spacing: .04em; white-space: nowrap; }
+.sacola__remover {
+  padding-block: .5rem;
+  font-size: .6875rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .35em;
+  color: var(--noite-suave);
+}
+.sacola__dica {
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  background: var(--areia);
+  font-size: .8125rem;
+  line-height: 1.6;
+}
+.totais { display: grid; gap: .5rem; font-size: .875rem; }
+.totais div { display: flex; justify-content: space-between; gap: 1rem; }
+.totais dt { color: var(--noite-suave); }
+.totais__promo dd { color: var(--azul); }
+.totais__total {
+  margin-top: .35rem;
+  padding-top: .8rem;
+  border-top: 1px solid var(--linha);
+  font-size: 1rem;
+  font-weight: 500;
+}
+.totais .totais__total dt { color: var(--noite); }
+.totais__nota { margin-top: .5rem; font-size: .75rem; text-align: right; color: var(--noite-suave); }
+.gaveta__pe .botao { margin-top: 1.25rem; }
+.totais__aviso:not(:empty) { margin-top: .85rem; font-size: .8125rem; line-height: 1.5; text-align: center; }
+
+/* menu do celular */
+.menu__principal a {
+  display: block;
+  padding-block: .85rem;
+  font-family: var(--fonte-titulo);
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.menu__extra {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--linha);
+}
+.menu__extra button {
+  padding-block: .7rem;
+  font-size: .75rem;
+  font-weight: 500;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+}
+
+/* textos (a marca, ajuda e conta) */
+.texto-gaveta { font-size: .9375rem; line-height: 1.85; }
+.texto-gaveta p + p { margin-top: 1.1rem; }
+.texto-gaveta h3 {
+  margin-bottom: .8rem;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+}
+.texto-gaveta section + section {
+  margin-top: 2.25rem;
+  padding-top: 2.25rem;
+  border-top: 1px solid var(--linha);
+}
+.texto-gaveta__lista {
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--linha);
+  font-size: .8125rem;
+  line-height: 2.1;
+  letter-spacing: .03em;
+}
+.conta__form { margin-top: 1.5rem; }
+.conta__form .botao { margin-top: 1.75rem; }
+
+@media (max-width: 33.99em) {
+  .gaveta__topo { padding-inline: .75rem; min-height: 4rem; }
+  .gaveta__corpo { padding: 1.5rem 1.25rem 2rem; }
+  .gaveta__pe { padding: 1.25rem 1.25rem 1.5rem; }
+  .produto__fotos { margin: -1.5rem -1.25rem 0; }
+  .produto__nome { font-size: 2.4rem; }
+  .sacola__item { grid-template-columns: 4.5rem minmax(0, 1fr) auto; gap: 1rem; }
+}

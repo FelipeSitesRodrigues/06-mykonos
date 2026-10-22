@@ -1,0 +1,75 @@
+/* 02 · hero: o casal na falésia de ponta a ponta, texto embaixo à esquerda, em cima do mar.
+   No celular (regra da casa): título, foto e o link, nessa ordem, com o título em azul-noite
+   no branco. A foto é o LCP: entra já pintada e só assenta (scale), nunca de opacidade 0. */
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr auto auto;
+  /* dois terços da tela: a seção de baixo já aparece e chama a rolagem. Sem passar de 16:9,
+     pra janela alta não virar um hero que só mostra a foto */
+  min-height: min(max(28rem, 66svh), 56.25vw);
+  overflow: hidden;
+  isolation: isolate;
+  color: var(--branco);
+}
+.hero__midia {
+  grid-area: 1 / 1 / 4 / 2;
+  position: relative;
+  z-index: -1;
+  overflow: hidden;
+  background: #3a6f9a;
+}
+.hero__midia::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(15deg, rgb(10 35 66 / .5) 0%, rgb(10 35 66 / .14) 34%, transparent 56%);
+  pointer-events: none;
+}
+/* a foto fica fora do fluxo: senão a altura natural dela (1920 px de largura = 1080 de altura)
+   esticava o grid e empurrava o link pra fora da primeira tela */
+.hero__midia picture { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 64% 30%;
+}
+.hero__cabeca { grid-area: 2 / 1; padding-inline: var(--texto-x); }
+.hero__rotulo { margin-bottom: 1.75rem; }
+.hero__titulo { font-size: clamp(3rem, 5.6vw, 5.4rem); }
+.hero__acao { grid-area: 3 / 1; padding: 2rem var(--texto-x) clamp(2.5rem, 4.2vw, 4.5rem); }
+
+/* entrada na abertura: as linhas sobem, o rótulo e o link aparecem, a foto assenta */
+.js .hero__titulo .linha > span { animation: subir 1.3s var(--ease) both; animation-delay: calc(.3s + var(--l, 0) * .13s); }
+.js .hero__rotulo { animation: surgir 1.1s var(--ease) .15s both; }
+.js .hero__acao { animation: surgir 1.1s var(--ease) .75s both; }
+.js .hero__img { animation: assentar 2.8s var(--ease) both; }
+@keyframes subir {
+  from { transform: translateY(130%); }
+  to { transform: none; }
+}
+@keyframes surgir {
+  from { opacity: 0; transform: translateY(.9rem); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes assentar {
+  from { transform: scale(1.08); }
+  to { transform: none; }
+}
+
+@media (max-width: 47.99em) {
+  .hero {
+    grid-template-rows: auto auto auto;
+    min-height: 0;
+    color: var(--noite);
+  }
+  .hero__cabeca { grid-area: 1 / 1; padding: 1.75rem var(--margem) 1.5rem; }
+  .hero__rotulo { margin-bottom: 1.1rem; font-size: .6875rem; letter-spacing: .42em; }
+  .hero__titulo { font-size: clamp(2.75rem, 14vw, 4.5rem); }
+  .hero__midia { grid-area: 2 / 1; z-index: 0; aspect-ratio: 1; }
+  .hero__midia::after { display: none; }
+  .hero__img { object-position: 50% 50%; }
+  .hero__acao { grid-area: 3 / 1; padding: 1.25rem var(--margem) 0; }
+}
